@@ -19,7 +19,7 @@ export const useAxios = (baseURL) => {
     return () => {
       setAxiosInstance({})
     }
-  }, [baseURL, initialized, keycloak, keycloak.token])
+  }, [initialized, keycloak, keycloak.token])
 
   return axiosInstance.instance
 }
