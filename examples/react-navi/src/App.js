@@ -1,8 +1,9 @@
 import React from 'react'
 import Keycloak from 'keycloak-js'
 import { KeycloakProvider } from '@react-keycloak/web'
-
 import { AppRouter } from './routes'
+
+export const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER
 
 const keycloak = new Keycloak({
   realm: process.env.REACT_APP_KEYCLOAK_REALM,

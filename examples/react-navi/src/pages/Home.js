@@ -1,13 +1,15 @@
 import React, { useCallback } from 'react'
 import { useKeycloak } from '@react-keycloak/web'
-
 import { useAxios } from '../utils/hooks'
 
 export default () => {
   const { keycloak } = useKeycloak()
-  const axiosInstance = useAxios('http://localhost:5000') // see https://github.com/panz3r/jwt-checker-server for a quick implementation
+  // const axiosInstance = useAxios(BACKEND_SERVER) // see https://github.com/panz3r/jwt-checker-server for a quick implementation
+  const axiosInstance = useAxios() // see https://github.com/panz3r/jwt-checker-server for a quick implementation
+
   const callApi = useCallback(() => {
-    axiosInstance.get('/jwt/decode')
+    axiosInstance.get('/apiBackEnd/api/userInfo')
+    axiosInstance.get('/apiBackEnd/kcAuth/usrAuth')
   }, [axiosInstance])
 
   return (
